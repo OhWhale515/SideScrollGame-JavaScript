@@ -9,12 +9,26 @@ class Player {
             x: 100,
             y: 100
         }
+        this.velocity = {
+            x: 0,
+            y: 20
+        }
         this.width = 30
         this.height = 30
     }
 
     draw() {
+        c.fillStyle = 'gold'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
+        
+    }
+
+    update() {
+        this.position.y += this.velocity.y
+        this.draw()
+        
+
+
     }
 }
 
