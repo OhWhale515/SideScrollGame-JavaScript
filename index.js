@@ -67,4 +67,23 @@ addEventListener('keydown', ({ keyCode }) => {
             break
     }
 })
-
+addEventListener('keyup', ({ keyCode }) => {
+    switch (keyCode) {
+        case 38:
+            console.log('up')
+            player.velocity.y = 0           
+            break
+        case 40:
+            console.log('down')
+            player.velocity.y = 0
+            break
+        case 37:
+            console.log('left')
+            player.velocity.x = 0
+            break
+        case 39:
+            console.log('right')
+            player.velocity.x = 0
+            break
+    }
+})
