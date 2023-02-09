@@ -11,7 +11,7 @@ class Player {
         }
         this.velocity = {
             x: 0,
-            y: 20
+            y: 1
         }
         this.width = 30
         this.height = 30
@@ -24,13 +24,19 @@ class Player {
     }
 
     update() {
-        this.position.y += this.velocity.y
         this.draw()
-        
-
+        this.position.y += this.velocity.y
 
     }
 }
 
 const player = new Player()
-player.draw()
+
+function animate() {
+    requestAnimationFrame(animate)
+    c.clearRect(0, 0, canvas.width, canvas.height)
+    
+player.update()
+}
+
+animate()
