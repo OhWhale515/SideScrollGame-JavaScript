@@ -56,7 +56,7 @@ const player = new Player()
 const platforms = [
     new Platform({
         x: 200, 
-        y: 100
+        y: 425
     }), 
     new Platform({
         x: 500,  
@@ -77,7 +77,7 @@ function animate() {
     c.clearRect(0, 0, canvas.width, canvas.height)
     player.update()
     platforms.forEach((platform) => {
-        platforms.draw()
+        platform.draw()
     })
 
     if (keys.right.pressed && player.position.x < 600) {
@@ -88,12 +88,12 @@ function animate() {
         player.velocity.x = 0
         if (keys.right.pressed) {
             platforms.forEach((platform) => {
-                platforms.position.x -= 5
+                platform.position.x -= 5
             })
             
         }else if (keys.left.pressed) {
             platforms.forEach((platform) => {
-                platforms.position.x += 5
+                platform.position.x += 5
             })
             
         }
